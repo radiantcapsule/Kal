@@ -93,9 +93,9 @@ static NSString *kSlideAnimationId = @"KalSwitchMonths";
   if (selectedTile != tile) {
     selectedTile.selected = NO;
     selectedTile = [tile retain];
-    tile.selected = YES;
-    [delegate didSelectDate:tile.date];
   }
+  tile.selected = YES;
+  [delegate didSelectDate:tile.date];
 }
 
 - (void)receivedTouches:(NSSet *)touches withEvent:event
