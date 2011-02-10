@@ -22,7 +22,6 @@ const CGSize kTileSize = { 46.f, 44.f };
 static NSString *kSlideAnimationId = @"KalSwitchMonths";
 
 @interface KalGridView ()
-@property (nonatomic, retain) KalTileView *selectedTile;
 @property (nonatomic, retain) KalTileView *highlightedTile;
 - (void)swapMonthViews;
 @end
@@ -207,8 +206,6 @@ static NSString *kSlideAnimationId = @"KalSwitchMonths";
                  || (direction == SLIDE_DOWN && [logic.daysInFirstWeekOfFollowingMonth count] > 0);
   
   [self swapMonthsAndSlide:direction keepOneRow:keepOneRow];
-  
-  self.selectedTile = [frontMonthView firstTileOfMonth];
 }
 
 - (void)slideUp { [self slide:SLIDE_UP]; }

@@ -5,6 +5,7 @@
 
 #import "KalView.h"
 #import "KalGridView.h"
+#import "KalTileView.h"
 #import "KalLogic.h"
 #import "KalPrivate.h"
 
@@ -208,6 +209,10 @@ static const CGFloat kMonthLabelHeight = 17.f;
 - (void)jumpToSelectedMonth { [gridView jumpToSelectedMonth]; }
 
 - (void)selectDate:(KalDate *)date { [gridView selectDate:date]; }
+
+- (void)deselectCurrentDate {
+  gridView.selectedTile.selected = NO;
+}
 
 - (BOOL)isSliding { return gridView.transitioning; }
 
